@@ -17,11 +17,11 @@ commercial = '便利店 五金店 服装店 菜市场 学校 图书城 商贸中
 residence = '木屋 居民楼 钢结构房 平房 小型公寓 人才公寓 花园洋房 中式小楼 空中别墅 复兴公馆'
 industry  = '木材厂 食品厂 造纸厂 水厂 电厂 钢铁厂 纺织厂 零件厂 企鹅机械 人民石油'
 
-OneStars = ' 零件厂 民食斋 中式小楼 人民石油 商贸中心 花园洋房 空中别墅 媒体之声 复兴公馆'
-TwoStars = ' 企鹅机械 图书城 加油站'
-TriStars = ' 平房 学校 钢铁厂 小型公寓 人才公寓 纺织厂 便利店 服装店 电厂 水厂'
-QuaStars = ' 居民楼 木屋 五金店 木材厂 食品厂 菜市场 造纸厂 钢结构房'
-PenStars = ' '
+OneStars = ' 企鹅机械 人民石油 空中别墅 媒体之声 复兴公馆 人才公寓'
+TwoStars = ' 零件厂 图书城 中式小楼 商贸中心 民食斋 花园洋房 加油站 钢铁厂'
+TriStars = ' 纺织厂'
+QuaStars = ' 木材厂 食品厂 电厂 小型公寓 菜市场 水厂'
+PenStars = ' 居民楼 木屋 平房 便利店 学校 服装店 五金店 造纸厂 钢结构房'
 
 last_result=(('人才公寓', '木屋', '居民楼'), ('五金店', '菜市场', '便利店'), ('食品厂', '电厂', '木材厂'))
 
@@ -30,21 +30,21 @@ last_result=(('人才公寓', '木屋', '居民楼'), ('五金店', '菜市场',
     在这里填写你的政策和照片加成
 '''
 Policy = {
-            'Global':  1+1,
-            'Online':  0,
-            'Offline': 0,
+            'Global':  6,
+            'Online':  2,
+            'Offline': 2,
             'Residence': 3,
-            'Commercial': 3,
-            'Industry': 1,
-            'JiaGuoZhiGuang': 0.15+0.45
+            'Commercial': 6,
+            'Industry': 15,
+            'JiaGuoZhiGuang': 0.2+0.1
         }
 Photos = {
             'Global':  0.7,
-            'Online':  1.2,
-            'Offline': 0.7,
-            'Residence': 2.1,
-            'Commercial': 1.5,
-            'Industry': 0.9,
+            'Online':  0.5,
+            'Offline': 1.0,
+            'Residence': 1.5,
+            'Commercial': 0.6,
+            'Industry': 1.5,
         }
 
 class UndefinedError(Exception): pass
@@ -112,23 +112,23 @@ start['空中别墅'] *= 1.52
 start['媒体之声'] *= 1.615
 
 #任务加成调整
-#start['小型公寓'] *= 2
-#start['人才公寓'] *= 3
-#start['居民楼'] *= 2
-#start['木屋'] *= 2
+#start['小型公寓'] *= 0
+#start['人才公寓'] *= 0
+#start['居民楼'] *= 0
+#start['木屋'] *= 0
 
-#start['纺织厂'] *= 2.5
-#start['木材厂'] *= 2
-start['食品厂'] *= 2
-start['菜市场'] *= 2
+#start['纺织厂'] *= 0
+#start['木材厂'] *= 0
+start['食品厂'] *= 0
+start['菜市场'] *= 0
 
 #start['商贸中心'] *= 2
-# start['服装店'] *= 2
-# start['造纸厂'] *= 2
+# start['服装店'] *= 0
+# start['造纸厂'] *= 0
 
-#start['民食斋'] *= 2
-# start['钢铁厂'] *= 3
-#start['木材厂'] *= 2
+#start['民食斋'] *= 0
+# start['钢铁厂'] *= 0
+#start['木材厂'] *= 0
 
 buffs_100 = {
                 '木屋': ['木材厂'],
